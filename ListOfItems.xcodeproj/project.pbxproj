@@ -56,7 +56,6 @@
 		AE99E8442D772F4500A36A7F /* ListOfItems */ = {
 			isa = PBXGroup;
 			children = (
-				AE99E8532D77303300A36A7F /* ItemModel.swift */,
 				AE99E8452D772F4500A36A7F /* ListOfItemsApp.swift */,
 				AE99E8472D772F4500A36A7F /* ContentView.swift */,
 				AE99E8492D772F4600A36A7F /* Assets.xcassets */,
@@ -77,8 +76,17 @@
 			isa = PBXGroup;
 			children = (
 				AE99E8562D77314500A36A7F /* IntExtension.swift */,
+				AE99E8582D77317D00A36A7F /* Model */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE99E8582D77317D00A36A7F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AE99E8532D77303300A36A7F /* ItemModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
