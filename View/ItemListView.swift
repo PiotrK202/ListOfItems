@@ -10,6 +10,7 @@ import SwiftUI
 struct ItemListView: View {
     @StateObject var viewModel: ItemsListViewModel
     @State var textField = ""
+    @State var showFavorite = false
     
     var body: some View {
         NavigationView {
@@ -21,7 +22,7 @@ struct ItemListView: View {
                     .keyboardType(.default)
                     .submitLabel(.done)
                     .onSubmit {
-                        viewModel.fitreadItems()
+                        viewModel.fitreadItems(searchText: textField)
                     }
                 ForEach(viewModel.models) { item in
                     NavigationLink(destination: ItemDetailsView()) {
@@ -34,7 +35,8 @@ struct ItemListView: View {
             .toolbar {
                 ToolbarItem(placement: .automatic) {
                     Button {
-                        viewModel.showFavorite()
+                        showFavorite.toggle()
+                        viewModel.showFavorite(isFavorite:showFavorite)
                     } label: {
                         Text("favorite")
                     }
@@ -47,17 +49,23 @@ struct ItemListView: View {
             }
             .onAppear {
                 Task {
+                    do {
                     try await viewModel.fetchItems()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
                 }
             }
         }
     }
 }
-struct ItemView_Previews: PreviewProvider {
+struct ItemListView_Previews: PreviewProvider {
     static var previews: some View {
         //        let model = ItemModel(id: 4, title: "321", price: 321, description: "asd", category: nil, images: nil)
-        let model = ItemDataServiceMock()
-        let viewModel = ItemsListViewModel(itemDataServicingMock: model)
-        ItemListView(viewModel: viewModel)
+//
+//        let model = ItemDataServiceMock()
+//        let viewModel = ItemsListViewModel(itemDataServicingMock: model)
+//        ItemListView(viewModel: viewModel)
+        ItemListView(viewModel: ItemsListViewModel(itemDataServicingMock: ItemDataServiceMock()))
     }
 }

@@ -13,11 +13,8 @@ final class ItemViewModel: ObservableObject {
     init(model: ItemModel) {
         self.model = model
     }
-    func isFavorite() {
-        model.favorite?.toggle()
-    }
-    var image: String? {
-        model.images?.first
+    var image: String {
+        (model.favorite ?? false ? "heart.fill" : "heart")
     }
     
     var title: String {

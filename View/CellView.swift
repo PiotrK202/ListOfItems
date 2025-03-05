@@ -11,7 +11,7 @@ struct CellView: View {
     @StateObject var viewModel: ItemViewModel
     
     var body: some View {
-        VStack {
+        HStack {
             if let imageUrl = viewModel.image {
                 AsyncImage(url: URL(string: imageUrl)) { image in
                     image
@@ -23,13 +23,16 @@ struct CellView: View {
                 }
                 .frame(width: 50, height: 50)
             }
-        VStack(spacing: 10) {
+        HStack {
             Text(viewModel.title)
                 .font(.headline)
-            HStack {
-                Image(systemName: "heart")
-            }
             
+            Image(systemName: viewModel.image)
+                .onTapGesture {
+                    viewModel.model.favorite?.toggle()
+                    viewModel.objectWillChange.send()
+                }
+             
             Spacer()
             
             Text(viewModel.price ?? "")
