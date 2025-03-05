@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct CellView: View {
+    @StateObject var viewModel: ItemViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+        }
     }
 }
 
 struct CellView_Previews: PreviewProvider {
     static var previews: some View {
-        CellView()
+        let model = ItemModel(id: 4, title: "eq", price: 123, description: "eqewq", category: nil, images: nil)
+        let viewModel = ItemViewModel(model: model)
+        CellView(viewModel: viewModel)
     }
 }
+

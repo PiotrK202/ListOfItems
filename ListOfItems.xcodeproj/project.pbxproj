@@ -20,6 +20,7 @@
 		AE99E8682D773A5800A36A7F /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE99E8672D773A5800A36A7F /* ItemDetailsView.swift */; };
 		AE99E86A2D773A7600A36A7F /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE99E8692D773A7600A36A7F /* CellView.swift */; };
 		AE99E86E2D77513E00A36A7F /* ItemsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE99E86D2D77513E00A36A7F /* ItemsListViewModel.swift */; };
+		AE99E8702D77529000A36A7F /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE99E86F2D77529000A36A7F /* ItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		AE99E8672D773A5800A36A7F /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
 		AE99E8692D773A7600A36A7F /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		AE99E86D2D77513E00A36A7F /* ItemsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListViewModel.swift; sourceTree = "<group>"; };
+		AE99E86F2D77529000A36A7F /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,11 +118,11 @@
 		AE99E85C2D7734F600A36A7F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AE99E85D2D77351100A36A7F /* MainView.swift */,
 				AE99E85F2D77356600A36A7F /* ErrorView.swift */,
 				AE99E8652D773A4200A36A7F /* ItemListView.swift */,
-				AE99E85D2D77351100A36A7F /* MainView.swift */,
-				AE99E8672D773A5800A36A7F /* ItemDetailsView.swift */,
 				AE99E8692D773A7600A36A7F /* CellView.swift */,
+				AE99E8672D773A5800A36A7F /* ItemDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,6 +132,7 @@
 			children = (
 				AE99E8632D77362900A36A7F /* ViewsToDisplay.swift */,
 				AE99E86D2D77513E00A36A7F /* ItemsListViewModel.swift */,
+				AE99E86F2D77529000A36A7F /* ItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				AE99E8682D773A5800A36A7F /* ItemDetailsView.swift in Sources */,
 				AE99E8572D77314500A36A7F /* IntExtension.swift in Sources */,
 				AE99E86E2D77513E00A36A7F /* ItemsListViewModel.swift in Sources */,
+				AE99E8702D77529000A36A7F /* ItemViewModel.swift in Sources */,
 				AE99E8662D773A4200A36A7F /* ItemListView.swift in Sources */,
 				AE99E8642D77362900A36A7F /* ViewsToDisplay.swift in Sources */,
 				AE99E86A2D773A7600A36A7F /* CellView.swift in Sources */,

@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor
-final class ItemListViewModel: ObservableObject {
+final class ItemsListViewModel: ObservableObject {
     @Published private(set) var models: [ItemModel] = []
     @Published var state: ViewsToDisplay = .downloading
     private let itemDataServicing: ItemDataService
@@ -25,5 +25,8 @@ final class ItemListViewModel: ObservableObject {
         } catch {
             self.state = .error(error.localizedDescription)
         }
+    }
+    func showFavorite() {
+        
     }
 }
