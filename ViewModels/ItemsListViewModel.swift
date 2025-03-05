@@ -11,22 +11,27 @@ import SwiftUI
 final class ItemsListViewModel: ObservableObject {
     @Published private(set) var models: [ItemModel] = []
     @Published var state: ViewsToDisplay = .downloading
-    private let itemDataServicing: ItemDataService
+    private let itemDataServicingMock: ItemDataServiceMock
     
-    init(itemDataServicing: ItemDataService) {
-        self.itemDataServicing = itemDataServicing
+    init(itemDataServicingMock: ItemDataServiceMock) {
+        self.itemDataServicingMock = itemDataServicingMock
 
     }
     
-    func fetchBooks() async throws {
+    func fetchItems() async throws {
         do {
-            let item = try await itemDataServicing.downloadItemAsync()
+            let item = try await itemDataServicingMock.downloadItemAsync()
             self.state = item.isEmpty ? .error("empty") : .mainView
         } catch {
             self.state = .error(error.localizedDescription)
         }
     }
+    
     func showFavorite() {
+        
+    }
+    
+    func fitreadItems() {
         
     }
 }

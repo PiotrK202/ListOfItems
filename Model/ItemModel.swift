@@ -17,10 +17,6 @@ final class ItemModel: Codable, Identifiable {
     let images: [String]?
     var favorite: Bool? = false
     
-    var desc2: String {
-        title ?? ""
-    }
-    
     init(id: Int, title: String?, price: Int?, description: String?, category: Category?, images: [String]?) {
         self.id = id
         self.title = title

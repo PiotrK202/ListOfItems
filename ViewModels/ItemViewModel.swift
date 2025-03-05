@@ -16,4 +16,15 @@ final class ItemViewModel: ObservableObject {
     func isFavorite() {
         model.favorite?.toggle()
     }
+    var image: String? {
+        model.images?.first
+    }
+    
+    var title: String {
+        model.title ?? ""
+    }
+    
+    var price: String? {
+        model.price?.formatPrice() ?? "0"
+    }
 }

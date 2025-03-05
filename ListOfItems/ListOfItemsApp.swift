@@ -11,7 +11,7 @@ import SwiftUI
 struct ListOfItemsApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            ItemListView(viewModel: ItemsListViewModel(itemDataServicingMock: ItemDataServiceMock()))
         }
     }
 }
